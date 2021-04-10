@@ -1,0 +1,33 @@
+{
+  "name": "ioasys-camp-2021-fase-1",
+  "version": "1.0.0",
+  "description": "Teste final da primeira fase do ioasys Camp 2021",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/julia-bindi/ioasys-camp-2021-fase-1.git"
+  },
+  "author": "Júlia Bindi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/julia-bindi/ioasys-camp-2021-fase-1/issues"
+  },
+  "homepage": "https://github.com/julia-bindi/ioasys-camp-2021-fase-1#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http-status-codes": "^2.1.4",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.5.1",
+    "sequelize": "^6.6.2",
+    "yup": "^0.32.9"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7",
+    "sequelize-cli": "^6.2.0"
+  }
+}
