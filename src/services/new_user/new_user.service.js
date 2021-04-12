@@ -21,13 +21,13 @@ module.exports.new_user = async (name, email, password) => {
         name: name,
         email: email,
         password: password,
-        is_admin: false,
-        is_delected: false,
+        isAdmin: false,
+        isDelected: false,
         created_at: new Date(),
         updated_at: new Date(),
     }
     
-    await usersRepository.create(new_user)
+    await usersRepository.create(new_user);
 
     const inserted = await usersRepository.get({ email });
 
