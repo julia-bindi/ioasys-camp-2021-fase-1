@@ -5,7 +5,6 @@ const { encryptor, messages } = require("../../helpers");
 const { constants } = require("../../utils");
 const { usersRepository } = require("../../repositories");
 const { promisify } = require("util");
-const userRepository = require("../../repositories/user.repository");
 
 module.exports.new_adm = async (token, name, email, password) => {
     const verify = promisify(jwt.verify);
