@@ -11,6 +11,10 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.BOOLEAN,
         field: "is_admin",
       },
+      isDelected: {
+        type: DataTypes.BOOLEAN,
+        field: "is_delected",
+      },
       createdAt: {
         type: DataTypes.DATE,
         field: "created_at",
