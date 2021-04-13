@@ -7,8 +7,8 @@ const { usersRepository } = require("../../repositories");
 const { promisify } = require("util");
 const { isAdminValidations } = require("../../validations");
 
-module.exports.new_adm = async (token, name, email, password) => {
-    await isAdminValidations.isAdmin(token);
+module.exports.new_adm = async (logged_token, name, email, password) => {
+    await isAdminValidations.isAdmin(logged_token);
 
     const exist = await usersRepository.get({ email });
 
@@ -39,7 +39,7 @@ module.exports.new_adm = async (token, name, email, password) => {
     }
 
     const sign = promisify(jwt.sign);
-    const new_adm_token = await sign(payload, constants.jwtToken);
+    const token = await sign(payload, constants.jwtToken);
   
-    return { email, new_adm_token };
+    return { email, token };
 };
