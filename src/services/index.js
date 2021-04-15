@@ -5,6 +5,7 @@ const newAdmService = require("./oneUser");
 const deleteUserService = require("./oneUser");
 const userUpdateService = require("./oneUser");
 const deleteAdmService = require("./oneUser");
+const admUpdateService = require("./oneUser");
 
 module.exports = {
   authService,
@@ -13,5 +14,6 @@ module.exports = {
   newAdmService,
   deleteUserService,
   userUpdateService,
-  deleteAdmService
+  deleteAdmService,
+  admUpdateService,
 };

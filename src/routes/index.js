@@ -4,7 +4,8 @@ const { newUser } = require("./newUser.routes");
 const { newAdm } = require("./newAdm.routes");
 const { deleteUser } = require("./deleteUser.routes");
 const { userUpdate } = require("./userUpdate.routes");
-const { deleteAdm } = require("./deleteAdm.routes")
+const { deleteAdm } = require("./deleteAdm.routes");
+const { admUpdate } = require("./admUpdate.routes");
 
 module.exports = {
   auth,
@@ -14,4 +15,5 @@ module.exports = {
   deleteUser,
   userUpdate,
   deleteAdm,
+  admUpdate,
 };
