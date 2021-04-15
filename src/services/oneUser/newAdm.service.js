@@ -5,29 +5,37 @@ const { encryptor, messages } = require("../../helpers");
 const { constants } = require("../../utils");
 const { usersRepository } = require("../../repositories");
 const { promisify } = require("util");
-const userRepository = require("../../repositories/user.repository");
 
-module.exports.new_user = async (name, email, password) => {
-    const user = await usersRepository.get({ email });
+module.exports.newAdm = async (name, email, password) => {
 
-    if(user){
+    const exist = await usersRepository.get({ email });
+
+    if(exist && !exist.isDelected){
         throw{
             status: StatusCodes.CONFLICT,
             message: messages.alreadyExists("email"),
         };
     }
 
-    const new_user = {
-        name: name,
-        email: email,
-        password: password,
-        isAdmin: false,
-        isDelected: false,
-        created_at: new Date(),
-        updated_at: new Date(),
+    if(!exist.isDelected){
+        const new_adm = {
+            name: name,
+            email: email,
+            password: password,
+            isAdmin: true,
+            isDelected: false,
+            created_at: new Date(),
+            updated_at: new Date(),
+        }
+        
+        await usersRepository.create(new_adm)
     }
-    
-    await usersRepository.create(new_user);
+    else{
+        exist.isDelected = false;
+        exist.updatedAt = new Date();
+
+        await usersRepository.update(exist);
+    }
 
     const inserted = await usersRepository.get({ email });
 

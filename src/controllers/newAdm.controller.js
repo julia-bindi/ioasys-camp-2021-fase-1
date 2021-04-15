@@ -1,9 +1,10 @@
 const { StatusCodes } = require("http-status-codes");
-const { new_admService } = require("../services");
+const { newAdmService } = require("../services");
 const yup = require("yup");
+const { isAdminValidations } = require("../validations");
 
 module.exports = {
-  new_adm: async (req, res) => {
+  newAdm: async (req, res) => {
     try{
       const schema = yup.object().shape({
         name: yup.string().required(),
@@ -16,8 +17,10 @@ module.exports = {
       });
       
       const [scheme, token]  = req.headers.authorization.split(" ");
+      await isAdminValidations.isAdmin(token);
+
       const {name, email, password } = req.body;
-      const response = await new_admService.new_adm(token, name, email, password);
+      const response = await newAdmService.newAdm(name, email, password);
       return res.status(StatusCodes.OK).json(response);
     }catch (error) {
       console.error(error);
