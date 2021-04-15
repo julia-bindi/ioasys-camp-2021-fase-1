@@ -4,7 +4,8 @@ const newUserController = require("./newUser.controller");
 const newAdmController = require("./newAdm.controller");
 const deleteUserController = require("./deleteUser.controller");
 const userUpdateController = require("./userUpdate.controller");
-const deleteAdmController = require("./deleteAdm.controller")
+const deleteAdmController = require("./deleteAdm.controller");
+const admUpdateController = require("./admUpdate.controller");
 
 module.exports = {
   usersController,
@@ -14,4 +15,5 @@ module.exports = {
   deleteUserController,
   userUpdateController,
   deleteAdmController,
+  admUpdateController,
 };
