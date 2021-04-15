@@ -6,13 +6,13 @@ const { constants } = require("../../utils");
 const { usersRepository } = require("../../repositories");
 const { promisify } = require("util");
 
-module.exports.delete_user = async (token, password) => {
+module.exports.deleteUser = async (token, password) => {
     const verify = promisify(jwt.verify);
     const logged_user = await verify(token, constants.jwtToken);
     
     const user = await usersRepository.getById( logged_user.id )
 
-    if (!user) {
+    if (!user || user.isDelected) {
         throw {
             status: StatusCodes.NOT_FOUND,
             message: messages.notFound("user"),
@@ -28,10 +28,10 @@ module.exports.delete_user = async (token, password) => {
     }
 
     user.isDelected = true;
+    user.updatedAt = new Date();
 
     await usersRepository.update(user);
 
     const response = "delected";
-
     return { response };
 }

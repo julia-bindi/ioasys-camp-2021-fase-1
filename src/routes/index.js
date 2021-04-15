@@ -1,13 +1,15 @@
 const { auth } = require("./auth.routes");
 const { users } = require("./users.routes");
-const { new_user } = require("./new_user.routes");
-const { new_adm } = require("./new_adm.routes");
-const { delete_user } = require("./delete_use.routes");
+const { newUser } = require("./newUser.routes");
+const { newAdm } = require("./newAdm.routes");
+const { deleteUser } = require("./deleteUser.routes");
+const { userUpdate } = require("./userUpdate.routes");
 
 module.exports = {
   auth,
   users,
-  new_user,
-  new_adm,
-  delete_user,
+  newUser,
+  newAdm,
+  deleteUser,
+  userUpdate,
 };

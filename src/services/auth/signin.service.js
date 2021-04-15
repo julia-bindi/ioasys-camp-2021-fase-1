@@ -9,7 +9,7 @@ const { promisify } = require("util");
 module.exports.signin = async (email, password) => {
   const user = await usersRepository.get({ email });
 
-  if (!user) {
+  if (!user || user.isDelected) {
     throw {
       status: StatusCodes.NOT_FOUND,
       message: messages.notFound("user"),

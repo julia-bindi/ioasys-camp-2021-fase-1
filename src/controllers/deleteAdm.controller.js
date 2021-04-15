@@ -1,21 +1,24 @@
 const { StatusCodes } = require("http-status-codes");
-const { delete_userService } = require("../services");
+const { deleteAdmService } = require("../services");
 const yup = require("yup");
+const { isAdminValidations } = require("../validations");
 
 module.exports = {
-    delete_user: async (req, res) => {
+    deleteUser: async (req, res) => {
         try{
             const schema = yup.object().shape({
-                token: yup.string().required(),
                 password: yup.string().required(),
             });
         
             await schema.validate(req.body, {
                 stripUnknown: true,
             });
-        
-            const { token, password } = req.body;
-            const response = await delete_userService.delete_user(token, password);
+            
+            const [scheme, token]  = req.headers.authorization.split(" ");
+            await isAdminValidations.isAdmin(token);
+
+            const {password } = req.body;
+            const response = await deleteAdmService.deleteAdm(token, password);
             return res.status(StatusCodes.OK).json(response);
         }catch (error) {
             console.error(error);
