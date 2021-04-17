@@ -6,6 +6,7 @@ const { deleteUser } = require("./deleteUser.routes");
 const { userUpdate } = require("./userUpdate.routes");
 const { deleteAdm } = require("./deleteAdm.routes");
 const { admUpdate } = require("./admUpdate.routes");
+const { newMovie } = require("./newMovie.routes");
 
 module.exports = {
   auth,
@@ -16,4 +17,5 @@ module.exports = {
   userUpdate,
   deleteAdm,
   admUpdate,
+  newMovie,
 };
