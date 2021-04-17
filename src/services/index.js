@@ -6,6 +6,7 @@ const deleteUserService = require("./oneUser");
 const userUpdateService = require("./oneUser");
 const deleteAdmService = require("./oneUser");
 const admUpdateService = require("./oneUser");
+const newMovieService = require("./movie");
 
 module.exports = {
   authService,
@@ -16,4 +17,5 @@ module.exports = {
   userUpdateService,
   deleteAdmService,
   admUpdateService,
+  newMovieService,
 };
