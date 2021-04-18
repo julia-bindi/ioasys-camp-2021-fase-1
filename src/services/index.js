@@ -11,6 +11,7 @@ const newVoteService = require("./vote");
 const getMovieService = require("./movie");
 const byTitleService = require("./movie");
 const byCategoryService = require("./movie");
+const byDirectorService = require("./movie");
 
 module.exports = {
   authService,
@@ -26,4 +27,5 @@ module.exports = {
   getMovieService,
   byTitleService,
   byCategoryService,
+  byDirectorService,
 };

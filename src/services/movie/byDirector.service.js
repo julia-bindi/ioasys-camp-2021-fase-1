@@ -4,15 +4,15 @@ const { messages } = require("../../helpers");
 const { moviesRepository } = require("../../repositories");
 const { promisify } = require("util");
 
-module.exports.byCategory = async (options) => {
+module.exports.byDirector = async (options) => {
     console.log(options);
-    var category = ''
+    var director = ''
 
-    if (options.category && options.category !== "") {
-        category = '%'+options.category+'%' ;
+    if (options.director && options.director !== "") {
+        director = '%'+options.director+'%' ;
     }
 
-    const movies = moviesRepository.getILikeCategory(category);
+    const movies = moviesRepository.getILikeDirector(director);
 
     if(!movies){
         throw{
