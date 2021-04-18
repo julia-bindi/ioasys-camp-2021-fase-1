@@ -1,27 +1,11 @@
 const { auth } = require("./auth.routes");
 const { users } = require("./users.routes");
-const { newUser } = require("./newUser.routes");
-const { newAdm } = require("./newAdm.routes");
-const { deleteUser } = require("./deleteUser.routes");
-const { userUpdate } = require("./userUpdate.routes");
-const { deleteAdm } = require("./deleteAdm.routes");
-const { admUpdate } = require("./admUpdate.routes");
-const { newMovie } = require("./newMovie.routes");
-const { newVote } = require("./newVote.routes");
-const { getMovie } = require("./getMovie.routes");
-const { byTitle } = require("./byTitle.routes");
+const { new_user } = require("./new_user.routes");
+const { new_adm } = require("./new_adm.routes");
 
 module.exports = {
   auth,
   users,
-  newUser,
-  newAdm,
-  deleteUser,
-  userUpdate,
-  deleteAdm,
-  admUpdate,
-  newMovie,
-  newVote,
-  getMovie,
-  byTitle,
+  new_user,
+  new_adm,
 };
