@@ -12,6 +12,7 @@ const { getMovie } = require("./getMovie.routes");
 const { byTitle } = require("./byTitle.routes");
 const { byCategory } = require("./byCategory.routes");
 const { byDirector } = require("./byDirector.routes");
+const { byCast } = require("./byCast.routes");
 
 module.exports = {
   auth,
@@ -28,4 +29,5 @@ module.exports = {
   byTitle,
   byCategory,
   byDirector,
+  byCast,
 };
