@@ -28,5 +28,5 @@ module.exports.newMovie = async (title, category, year, director, cast, descript
 
     await moviesRepository.create(new_movie);
 
-    return { title, note }
+    return { title, note:0 }
 }

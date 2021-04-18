@@ -9,6 +9,7 @@ const { admUpdate } = require("./admUpdate.routes");
 const { newMovie } = require("./newMovie.routes");
 const { newVote } = require("./newVote.routes");
 const { getMovie } = require("./getMovie.routes");
+const { byTitle } = require("./byTitle.routes");
 
 module.exports = {
   auth,
@@ -22,4 +23,5 @@ module.exports = {
   newMovie,
   newVote,
   getMovie,
+  byTitle,
 };
