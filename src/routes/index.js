@@ -8,6 +8,7 @@ const { deleteAdm } = require("./deleteAdm.routes");
 const { admUpdate } = require("./admUpdate.routes");
 const { newMovie } = require("./newMovie.routes");
 const { newVote } = require("./newVote.routes");
+const { getMovie } = require("./getMovie.routes");
 
 module.exports = {
   auth,
@@ -20,4 +21,5 @@ module.exports = {
   admUpdate,
   newMovie,
   newVote,
+  getMovie,
 };
