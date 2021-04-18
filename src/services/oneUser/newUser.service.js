@@ -10,14 +10,16 @@ const userRepository = require("../../repositories/user.repository");
 module.exports.newUser = async (name, email, password) => {
     const user = await usersRepository.get({ email });
 
-    if(user && !user.isDelected){
-        throw{
-            status: StatusCodes.CONFLICT,
-            message: messages.alreadyExists("email"),
-        };
+    if(user){
+        if(!user.isDelected){
+            throw{
+                status: StatusCodes.CONFLICT,
+                message: messages.alreadyExists("email"),
+            };
+        }
     }
 
-    if(!user.isDelected){
+    if(!user){
         const new_user = {
             name: name,
             email: email,

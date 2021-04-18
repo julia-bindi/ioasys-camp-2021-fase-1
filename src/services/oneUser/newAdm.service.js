@@ -10,14 +10,16 @@ module.exports.newAdm = async (name, email, password) => {
 
     const exist = await usersRepository.get({ email });
 
-    if(exist && !exist.isDelected){
-        throw{
-            status: StatusCodes.CONFLICT,
-            message: messages.alreadyExists("email"),
-        };
+    if(exist){
+        if(!exist.isDelected){
+            throw{
+                status: StatusCodes.CONFLICT,
+                message: messages.alreadyExists("email"),
+            };
+        }    
     }
 
-    if(!exist.isDelected){
+    if(!exist){
         const new_adm = {
             name: name,
             email: email,
