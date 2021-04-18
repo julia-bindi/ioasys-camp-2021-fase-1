@@ -10,6 +10,7 @@ const { newMovie } = require("./newMovie.routes");
 const { newVote } = require("./newVote.routes");
 const { getMovie } = require("./getMovie.routes");
 const { byTitle } = require("./byTitle.routes");
+const { byCategory } = require("./byCategory.routes");
 
 module.exports = {
   auth,
@@ -24,4 +25,5 @@ module.exports = {
   newVote,
   getMovie,
   byTitle,
+  byCategory,
 };
