@@ -3,12 +3,16 @@ const { StatusCodes } = require("http-status-codes");
 const { messages } = require("../../helpers");
 const { moviesRepository } = require("../../repositories");
 const { promisify } = require("util");
-const { stringify } = require("querystring");
 
-module.exports.byTitle = async (title) => {
-    title = stringify(title)
-    title = title.toLowerCase
-    const movies = moviesRepository.getLike(title);
+module.exports.byTitle = async (options) => {
+    console.log(options);
+    var title = ''
+
+    if (options.title && options.title !== "") {
+        title = '%'+options.title+'%' ;
+    }
+
+    const movies = moviesRepository.getILikeTitle(title);
 
     if(!movies){
         throw{
