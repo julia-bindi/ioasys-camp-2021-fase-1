@@ -1,12 +1,11 @@
 const { StatusCodes } = require("http-status-codes");
-const { new_admService } = require("../services");
+const { newUserService } = require("../services");
 const yup = require("yup");
 
 module.exports = {
-    new_adm: async (req, res) => {
+    newUser: async (req, res) => {
         try{
             const schema = yup.object().shape({
-                token: yup.string().required(),
                 name: yup.string().required(),
                 email: yup.string().required().email(),
                 password: yup.string().required(),
@@ -16,8 +15,8 @@ module.exports = {
                 stripUnknown: true,
               });
 
-              const { token, name, email, password } = req.body;
-              const response = await new_admService.new_adm(token, name, email, password);
+              const { name, email, password } = req.body;
+              const response = await newUserService.newUser(name, email, password);
               return res.status(StatusCodes.OK).json(response);
         }catch (error) {
             console.error(error);

@@ -1,11 +1,27 @@
 const authService = require("./auth");
 const usersService = require("./users");
-const new_userService = require("./new_user");
-const new_admService = require("./new_adm");
+const newUserService = require("./oneUser");
+const newAdmService = require("./oneUser");
+const deleteUserService = require("./oneUser");
+const userUpdateService = require("./oneUser");
+const deleteAdmService = require("./oneUser");
+const admUpdateService = require("./oneUser");
+const newMovieService = require("./movie");
+const newVoteService = require("./vote");
+const getMovieService = require("./movie");
+const byTitleService = require("./movie");
 
 module.exports = {
   authService,
   usersService,
-  new_userService,
-  new_admService,
+  newUserService,
+  newAdmService,
+  deleteUserService,
+  userUpdateService,
+  deleteAdmService,
+  admUpdateService,
+  newMovieService,
+  newVoteService,
+  getMovieService,
+  byTitleService,
 };
