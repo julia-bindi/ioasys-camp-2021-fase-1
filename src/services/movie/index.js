@@ -3,6 +3,7 @@ const { getMovie } = require("./getMovie.service");
 const { byTitle } = require("./byTitle.service");
 const { byCategory } = require("./byCategory.service");
 const { byDirector } = require("./byDirector.service");
+const { byCast } = require("./byCast.service");
 
 module.exports = {
     newMovie,
@@ -10,4 +11,5 @@ module.exports = {
     byTitle,
     byCategory,
     byDirector,
+    byCast,
 }

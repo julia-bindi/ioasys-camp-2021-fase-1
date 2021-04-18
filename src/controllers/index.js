@@ -12,6 +12,7 @@ const getMovieController = require("./getMovie.controller");
 const byTitleController = require("./byTitle.controller");
 const byCategoryController = require("./byCategory.controller");
 const byDirectorController = require("./byDirector.controller");
+const byCastController = require("./byCast.controller");
 
 module.exports = {
   usersController,
@@ -28,4 +29,5 @@ module.exports = {
   byTitleController,
   byCategoryController,
   byDirectorController,
+  byCastController,
 };
