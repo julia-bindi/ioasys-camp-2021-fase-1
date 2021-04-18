@@ -8,6 +8,7 @@ const deleteAdmController = require("./deleteAdm.controller");
 const admUpdateController = require("./admUpdate.controller");
 const newMovieController = require("./newMovie.controller");
 const newVoteController = require("./newVote.controller");
+const getMovieController = require("./getMovie.controller");
 
 module.exports = {
   usersController,
@@ -20,4 +21,5 @@ module.exports = {
   admUpdateController,
   newMovieController,
   newVoteController,
+  getMovieController,
 };
