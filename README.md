@@ -4,7 +4,7 @@ Código desenvolvido por Júlia Bindi para o desafio final da primeira fase do i
 
 ## Testes n POSTMAN
 
-Os testes elaborados no Postman estão disponíveis [neste lisk](https://www.getpostman.com/collections/1029ac4601b3d25bd78d)
+Os testes elaborados no Postman estão disponíveis [neste lisk](https://www.getpostman.com/collections/1029ac4601b3d25bd78d), basta usar a importação via link.
 
 Junto aos teste há duas pastas, uma que adiciona usuários e outras que adiciona alguns filmes. Desa forma é possível facilmente inserir alguns dados para verificar o funcionamento do código.
 
