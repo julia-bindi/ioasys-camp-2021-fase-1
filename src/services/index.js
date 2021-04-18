@@ -13,6 +13,7 @@ const byTitleService = require("./movie");
 const byCategoryService = require("./movie");
 const byDirectorService = require("./movie");
 const byCastService = require("./movie");
+const getVoteService = require("./vote");
 
 module.exports = {
   authService,
@@ -30,4 +31,5 @@ module.exports = {
   byCategoryService,
   byDirectorService,
   byCastService,
+  getVoteService,
 };

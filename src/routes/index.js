@@ -13,6 +13,7 @@ const { byTitle } = require("./byTitle.routes");
 const { byCategory } = require("./byCategory.routes");
 const { byDirector } = require("./byDirector.routes");
 const { byCast } = require("./byCast.routes");
+const { getVote }= require("./getVote.routes");
 
 module.exports = {
   auth,
@@ -30,4 +31,5 @@ module.exports = {
   byCategory,
   byDirector,
   byCast,
+  getVote,
 };

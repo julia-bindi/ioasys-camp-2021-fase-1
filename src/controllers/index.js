@@ -13,6 +13,7 @@ const byTitleController = require("./byTitle.controller");
 const byCategoryController = require("./byCategory.controller");
 const byDirectorController = require("./byDirector.controller");
 const byCastController = require("./byCast.controller");
+const getVoteController = require("./getVote.controller");
 
 module.exports = {
   usersController,
@@ -30,4 +31,5 @@ module.exports = {
   byCategoryController,
   byDirectorController,
   byCastController,
+  getVoteController,
 };
